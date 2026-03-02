@@ -1,13 +1,14 @@
-function login(user) {
-  if (!user) {
-    return "No User";
-  }
+const login = (user) => {
+  console.log("Login attempt");
 
-  if (user.role === "student") {
-    return "Student Logged In";
-  }
+  if (!user) return "No User";
 
-  return "Login Failed";
-}
+  switch(user.role){
+    case "student":
+      return "Student Logged In";
+    default:
+      return "Login Failed";
+  }
+};
 
 module.exports = login;
