@@ -1,9 +1,14 @@
 const login = (user) => {
- switch(user.role){
-  case "student":
-   return "Welcome Student";
-  default:
-   return "Access Denied";
- }
+  console.log("Login attempt");
+
+  if (!user) return "No User";
+
+  switch(user.role){
+    case "student":
+      return "Student Logged In";
+    default:
+      return "Login Failed";
+  }
 };
+
 module.exports = login;
